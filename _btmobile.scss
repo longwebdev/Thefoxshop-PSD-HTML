@@ -1,0 +1,54 @@
+@media (max-width: 576px){
+	.top{
+		height: auto;
+		text-align: center;
+		.top-ngonngu{
+			.cacngonngu{
+				position: static;
+				opacity: 1;
+				visibility: visible;
+				width: 100%;
+				a{
+					color: $mauchu;
+
+				}
+			}
+		}
+	}
+	.menuandlogo{
+		height: auto;
+		border-bottom: 1px solid $maulogo;
+		.menutop{
+			.timkiem{
+				line-height: 30px;
+			}
+			padding: 10px 0;
+			ul.menuphai{
+				li.nav-item{
+					a.nav-link{
+						line-height: 40px;
+						border-bottom: 1px dashed #cfcfcf;
+					}
+				}
+			}
+		}
+	}
+	.tieude{
+		.trai{
+			h2{
+				@include reset;
+			}
+		}
+		.phai{
+			border-top: 1px solid $maulogo;
+			.breadcrumb{
+				line-height: $tieudeheightmobile;
+				height: $tieudeheightmobile;
+				text-align: center;
+				 .breadcrumb-item{
+				 	float: none;
+				 }
+			}
+		}
+	}
+}

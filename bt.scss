@@ -1,0 +1,574 @@
+// Phan 1 : Định nghĩa các đối tượng cơ bản trong web ( mau , cỡ chữ, màu chữ, ..)
+//Các cảnh sử dụng  trong giao diện
+$anhlogo: "images/logo.png";
+//Màu
+$mauxanhdam : #2c3e50;
+$mauchu : #2c3e50;
+$maulogo:#1abc9c;
+$mauchu:white;
+$mauchufooter:#4f5a64;
+//Màu phần nền tiêu đề
+$maunentieude:#f9fafb;
+$maunennut:#21303f;
+$mauchutieude:#a1b1bc;
+$mauvien:#ecf0f1;
+$mauchunhat: #b9c5cd;
+$mauicontopcontent: #e3e6e9;
+$maubuttonup:#a1b1bc;
+$mauiconnextslide02:#34495e;
+$maulogoslide:#b7b7b7;
+$maufooter:#1a1c27;
+$mauchufooter: #758590;
+$mauvachkengang: #243240;
+$mauborderotrang:#c6c6c9;
+//Font
+$fontchu:'Lato', sans-serif;
+
+//Cỡ chữ
+$cochunho:13px;
+$covua:14px;
+$cochumenu:15px;
+$cochutieude:30px;
+$cochufooter:16px;
+$cochutitlefooter:18px;
+//cac chieu cao va rong
+$topcolumnsitems:42px;
+$topreadmore: 32px;
+$topcart: 30px;
+$topheightcontent: 40px;
+$topheight:50px;
+$logoheight:90px;
+$footerheight:770px;
+$slogannheight:100px;
+$tieudeheight:120px;
+$tieudeheightmobile:26px;
+$topratedfooter: 119px;
+$rongotrang: 85px;
+$topthepitem:22px;
+// code mặc định cho trangweb
+@mixin reset() {
+	margin: 0;
+	padding: 0;
+}
+@mixin nutslide() {
+	background: $mauchu;
+	color: $mauxanhdam;
+	height: auto;
+	width: auto;
+	padding: 12px 22px;
+	border-radius: 4px;
+}
+@mixin chucart() {
+	margin:{
+		top: $topcart;
+		left: $topcart;
+		bottom: 20px;
+	}
+}
+//css cho phần top: 
+body{
+	font-family: $fontchu;
+	overflow-x: hidden;
+}
+.top{
+	height: $topheight;
+	line-height: $topheight;
+	background-color: $mauxanhdam;
+	color: $mauchu;
+	.top-ngonngu{
+		position: relative;
+		
+		b{
+			cursor: pointer;
+			font-size: $covua;
+			i{
+				padding-right: 8px;
+			}
+		}
+		.cacngonngu{
+			position: absolute;
+			width: 155px;
+			background-color: $mauxanhdam;
+			z-index: 10;
+			top: 50px;
+			// opacity: 0;
+			// transition: 0.2s;
+			// visibility: hidden;
+			a{
+				display: block;
+				padding: 3px 12px;
+				color: $mauchu;
+				line-height: 20px;
+				text-align: center;
+
+				font: {
+					size:$covua;
+					weight: normal;
+				}
+			}
+		}
+	} 
+	// hết top ngôn ngữ
+	.phai{
+		.nut{
+			display: inline;
+			a.btn{
+				font-size: $cochunho;
+				color: $mauchu;
+				background-color: $maunennut;
+				height: 30px;
+				padding: auto 11px;
+				border: none;
+				text-transform: uppercase;
+				font-weight: bold;
+				margin-right: 15px;
+				i{
+					padding-right: 12px;
+					color: $maulogo;
+				}
+			}
+		}
+		// hết nút
+		.caclink{
+			display: inline;
+			ul{
+				display: inline;
+				li{
+					display: inline;
+					list-style: none;
+					a{
+						color: $mauchu;
+						font-size: $cochunho;
+						padding-right: 15px;
+					}
+				}
+			}
+		}
+		// hết các link
+	}
+}
+//Sử lý phần menu và logo
+.menuandlogo{
+	height: $logoheight;
+	line-height: $logoheight;
+	.menutop{
+		@include reset;
+		a.navbar-brand{
+			@include reset;
+		}
+		// hết logo
+		.timkiem{
+			i{
+				font-size: $cochumenu;
+			}
+		}
+		// hết nút tìm kiếm
+		ul.menuphai{
+			li.nav-item{
+				a.nav-link{
+					@include reset;
+					font: {
+						size : $cochumenu;
+						weight : 900;
+					}
+					padding: {
+						right: 25px;
+						left: 25px;
+					}
+					color: $mauxanhdam;
+					text-transform: uppercase;
+				}
+			}
+		}
+		// hết menu phải
+	}
+	// hết menu top
+}
+//css cho phần tiêu đề
+.tieude{
+	height: $tieudeheight;
+	line-height: $tieudeheight;
+	background-color: $maunentieude;
+	position: relative;
+	&:after{
+		content :'';
+		width: 100%;
+		height: $tieudeheight/3;
+		position: absolute;
+		top: 0;
+		background-image: -webkit-linear-gradient(top,#e2dfdf,#f9f9f9);
+	}
+	.trai{
+		h2{
+			height: $tieudeheight;
+			line-height: $tieudeheight;
+			font-size: $cochutieude;
+			color: $mauxanhdam;
+			padding-right: 20px;
+			a{
+				i{
+					background-color: $mauchu;
+					border: 1px solid $mauvien;
+					border-radius: 3px;
+					display: inline-block;
+					padding: 5px;
+					height: 30px;
+					width: 30px;
+					color: $mauchutieude;
+					font-size: $cochunho;
+					text-align: center;
+					line-height: 30px;
+					&:before{
+						position: relative;
+						top: -4px;
+					}
+				}
+
+			}
+		}
+	}
+	.phai{
+		.breadcrumb{
+			@include reset;
+			background-color: transparent;
+			.breadcrumb-item{
+				font-size: $covua;
+				color: $mauchunhat;
+				&:first-child:before{
+					content:'';
+				}
+				&:before{
+					display: inline-block;
+					padding-right: .5rem;
+					padding-left: .5rem;
+					color: #818a91;
+					content: "\f105";
+					display: inline-block;
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: inherit;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+				}
+			}
+		}
+	}
+}
+
+.slideanh{
+	#slide01{
+		a.carousel-control{
+			
+			span.icon-next{
+				@include nutslide;
+			}
+			span.icon-prev{
+				@include nutslide;
+			}
+
+		}
+		a.carousel-control.right{
+			background: none;
+		}
+		a.carousel-control.left{
+			background: none;
+		}
+	}
+}
+// phần content-icontop
+.primary-content{
+	margin-top: 100px;
+	.top-content-header{
+		width: 230px;
+		height: $topheightcontent;
+		border: 1px solid $mauicontopcontent;
+		padding: {
+			top: 7px;
+			right: 23px;
+		}
+		.icon-top-content{
+			transform: translateY(-7px);
+			border-left:  1px solid $mauicontopcontent;
+			i{
+				color: $mauicontopcontent;
+				padding:{
+					top: 10px;
+					left: 5px;
+				}
+			}
+		}
+	}
+	.secondary{
+		transform: translateX(-30px);
+	}
+	.secondaryi{
+		transform: translateX(-20px);
+	}
+	.button-up{
+		background: $maubuttonup;
+		color: $mauchu;
+		transform: translateX(-10px);
+	}
+	.end-top-content{
+		width: 100px;
+		transform: translateY(-40px) translateX(350%);
+		height: $topheightcontent;
+		border: 1px solid $mauicontopcontent;
+		.image-end{
+			transform: translateX(-15px);
+		}
+		.content-end{
+			padding: 5px 25px;
+		}
+		.icon-top-content{
+			transform: translateY(-7px);
+			border-left:  1px solid $mauicontopcontent;
+			i{
+				color: $mauicontopcontent;
+				padding:{
+					top: 16px;
+
+				}
+			}
+		}
+		.icon-list-end{
+			transform: translateY(-45px) translateX(500%);
+			border-left:  1px solid $mauicontopcontent;
+			i{
+				color: $mauicontopcontent;
+			}
+		}
+	}
+}
+// end - phần content-icontop
+// phần đường kẻ ngang
+.duongkengang{
+	margin-top: 30px;
+	.duongke{
+		border: 1px solid $mauicontopcontent;
+		transform: translateX(100px);
+	}
+}
+//phần cart
+.cart-details{
+	margin-top: $topcart;
+	.card{
+		.card-block{
+			.card-title{
+				@include chucart;
+				color:$mauxanhdam;
+			}
+			.rating{
+				@include chucart;
+				i{
+					color: $maulogo;
+				}
+			}
+			p{
+				margin-left: $topcart;
+			}
+		}
+		.duoi{
+			margin-top: $topcart;
+		}
+		.tongquat-cardblock{
+			background: $mauxanhdam;
+			.card-block{
+				.card-title{
+					@include chucart;
+					color: #fff;
+				}
+				.rating{
+					@include chucart;
+					i{
+						color: $maulogo;
+					}
+				}
+				p{
+					color: #fff;
+					margin-left: $topcart;
+				}
+			}
+			.duoi{
+				color: #fff;
+				margin-top: $topcart;
+			}
+		}
+	}
+	.cart-secondary{
+		margin-top: $topcart;
+	}
+}
+// phần các nut chuyển trang
+.cacnutchuyentrang{
+	margin-top: 50px;
+	button{
+		background: none;
+		border: 1px solid $mauicontopcontent;
+	}
+	button.active{
+		background: $maulogo;
+	}
+}
+//phần slide logo
+.slide-logo{
+	margin-top: 100px;
+	#slide02{
+		a.carousel-control{
+			
+			span.icon-next{
+				@include nutslide;
+				background: $mauiconnextslide02;
+				color: white;
+			}
+			span.icon-prev{
+				@include nutslide;
+				background: $maulogo;
+				color: white;
+			}
+
+		}
+		a.carousel-control.right{
+			background: none;
+		}
+		a.carousel-control.left{
+			background: none;
+		}
+	}
+	.logo-item{
+		height: 260px;
+		padding-top: 50px;
+
+	}
+}
+//phần slogan
+.slogan{
+	background: $mauchutieude;
+	height: $slogannheight;
+	padding: 45px 0;
+	position: relative;
+	.slogan-item{
+		color: $maulogoslide;
+		h4{
+			font:{
+				size: 24px;
+				weight: bold;
+				color: white;
+			}
+
+		}
+	}
+	&:after{
+		content: '';
+		background: #a1b1bc;
+		position: absolute;
+		width: 40px;
+		height: 37px;
+		border-bottom: 23px solid #a1b1bc;
+		border-left: 3px solid #a1b1bc;
+		transform: rotate(45deg);
+		left: 50%;
+	}
+}
+//css cho phần footer
+.footer{
+	background: $maufooter;
+	height: $footerheight;
+	.columns-primary{
+		
+		p{
+			margin-top: $topcart;
+			color:$mauchufooter;
+			font-size:$covua;
+		}
+		.read-more{
+			margin-top:$topreadmore;
+			i{
+				width: 15px;
+				height: 17px;
+				border-radius: 7px;
+				background: $maulogo;
+				
+			} 
+			h4{
+				transform: translateY(5px) translateX(-15px);
+				color: $maulogo;
+				font-size: $covua;
+			}
+		}
+		.vachkengang{
+			background: $mauvachkengang;
+			margin:{
+				top: 30px;
+				bottom: 25px;
+			};
+		}
+		.columns-small-icon{
+			.text-icon{
+				margin: 0;
+				padding: 0;
+				line-height: 0px;
+				transform: translateY(-25px) translateX(10px);
+			}
+		}
+	}
+	.columns-secondary{
+		margin:{
+			top:$topratedfooter;
+		};
+		h5{
+			color: $mauchu;
+			font-size: $cochutitlefooter;
+		}
+		.columns-secondary-items{
+			border-bottom: 1px solid $mauvachkengang;
+			margin-bottom: 42px;
+			margin-top: $topcolumnsitems;
+			.otrang{
+				width: $rongotrang;
+				height: $rongotrang;
+				background: $mauchu;
+				border:1px solid $mauborderotrang;
+			}
+			p{
+				font-size: $cochufooter;
+				color: $mauchu;
+			} 
+			
+			.columns-secondary-item{
+
+				p{
+				font-size: $cochufooter;
+				color: $mauchu;
+				
+				} 
+				p.selling, i{
+				color: $maulogo;
+				}
+				span{
+					padding-left: 5px;
+					color:$maulogo;
+				}
+				
+			}
+		}
+
+	}
+	.columns-third{
+		margin:{
+			top:$topratedfooter;
+		};
+		h5{
+			color:$mauchu;
+		}
+		p{
+			color: $mauchufooter;
+		}
+		.store{
+			border-bottom: 1px solid $mauvachkengang;
+			margin-bottom: 42px;
+			margin-top: $topcolumnsitems;
+		}
+	}
+}
+
+@import "btmobile";
