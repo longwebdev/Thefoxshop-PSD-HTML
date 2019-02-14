@@ -196,8 +196,7 @@ body {
 .duongkengang {
   margin-top: 30px; }
   .duongkengang .duongke {
-    border: 1px solid #e3e6e9;
-    transform: translateX(100px); }
+    border: 1px solid #e3e6e9; }
 
 .cart-details {
   margin-top: 30px; }
